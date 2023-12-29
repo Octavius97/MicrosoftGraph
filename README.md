@@ -10,4 +10,7 @@ Buscamos el modulo en la Galeria de Modulos de PowerShell
 ```PowerShell
 Find-Module -Name Microsoft.Graph | Select-Object -Property Name,Version,PublishedDate | Format-List
 ```
-Este comando te muestra la informacion del modulo disponible en la galeria de PowerShell
+Este comando te muestra la informacion del modulo disponible en la galeria de PowerShell. Para proceder a instalar el modulo escribimos el siguiente comando
+```PowerShell
+Install-Module Microsoft.Graph -Force
+```
