@@ -21,5 +21,8 @@ Install-Module Microsoft.Graph -Force
 SetExecution-Policy Unrestricted
 ```
 
-> [!Info]
+> [!Information]
 > Para conectar al modulo, hay que establecer permisos nevesarios según las acciones a realizar. Para ello se usan `Scopes` que definen los permisos, para más información, puede acceder al CSV con todos los permisos y su descripción.
+
+> [!Caution]
+> Asegúrese ussr los scopes necesarios, en caso de requerir un scope diferente puede volver a conectarse.
