@@ -18,7 +18,7 @@ Install-Module Microsoft.Graph -Force
 > [!Note]
 > Para ejecutar procesos con Microsoft Graph PowerShell SDK hay que establecer la política de ejecución del PowerShell sin restricciones
 ```PowerShell
-SetExecution-Policy Unrestricted
+Set-ExecutionPolicy Unrestricted
 ```
 
 > [!Important]
