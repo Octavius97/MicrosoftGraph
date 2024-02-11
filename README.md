@@ -14,3 +14,12 @@ Este comando te muestra la informacion del modulo disponible en la galeria de Po
 ```PowerShell
 Install-Module Microsoft.Graph -Force
 ```
+
+> [!Note]
+> Para ejecutar procesos con Microsoft Graph PowerShell SDK hay que establecer la política de ejecución del PowerShell sin restricciones
+```PowerShell
+SetExecution-Policy Unrestricted
+```
+
+> [!Info]
+> Para conectar al modulo, hay que establecer permisos nevesarios según las acciones a realizar. Para ello se usan `Scopes` que definen los permisos, para más información, puede acceder al CSV con todos los permisos y su descripción.
