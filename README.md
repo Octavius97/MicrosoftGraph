@@ -1,4 +1,4 @@
-# MicrosoftGraph
+# Microsoft Graph PowerShell
 Documentatcion referente a Microsoft Graph PowerShell.
 
 > [!Note]
@@ -22,7 +22,17 @@ Set-ExecutionPolicy Unrestricted
 ```
 
 > [!Important]
-> Para conectar al modulo, hay que establecer permisos nevesarios según las acciones a realizar. Para ello se usan `Scopes` que definen los permisos, para más información, puede acceder al CSV con todos los permisos y su descripción.
+> Para conectar al modulo, hay que establecer permisos nevesarios según las acciones a realizar. Para ello se usan `Scopes` que definen los permisos, para más información, puede acceder a la [documentación](https://learn.microsoft.com/en-us/graph/permissions-reference) que contiene todos los permisos y su descripción.
 
 > [!Caution]
 > Asegúrese ussr los scopes necesarios, en caso de requerir un scope diferente puede volver a conectarse.
+
+## 2. Ejemplos realizados
+
+Agregar un usuario 👉 [New-MgUser](MicrosoftGraph_NewUser.ps1)
+Agregar usuarios en masa 👉 [ForEach - New-MgUser](MicrosoftGraph_NewUserBulk.ps1)
+Agregar usuarios a un grupo 👉 [ForEach - New-MgGroupMember](MicrosoftGraph_AddUsersToGroupInBulk.ps1)
+Actualizar usuarios en masa 👉 [ForEach - Update-MgUser](MicrosoftGraph_UpdateUsersInBulk.ps1)
+Asignar licencias a usuarios en masa 👉 [ForEach - Set-MgUserLicense](MicrosoftGraph_UserAssignLicense.ps1)
+> [!Important]
+> Para asignar las licencias, se deben de usar el Nombre SKU de la licencia. Para más información al respecto puede acceder a la documentación de los nombres SKU de licencias [Para Empresas](https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference) o [Para Escuelas](https://learn.microsoft.com/en-us/microsoftteams/sku-reference-edu)
