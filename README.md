@@ -25,7 +25,7 @@ Set-ExecutionPolicy Unrestricted
 > Para conectar al modulo, hay que establecer permisos nevesarios según las acciones a realizar. Para ello se usan `Scopes` que definen los permisos, para más información, puede acceder a la [documentación](https://learn.microsoft.com/en-us/graph/permissions-reference) que contiene todos los permisos y su descripción.
 
 > [!Caution]
-> Asegúrese ussr los scopes necesarios, en caso de requerir un scope diferente puede volver a conectarse.
+> Asegúrese usar los scopes necesarios, en caso de requerir un scope diferente puede volver a conectarse.
 
 ## 2. Ejemplos realizados
 
