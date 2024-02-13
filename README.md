@@ -41,4 +41,4 @@ Set-ExecutionPolicy Unrestricted
 > Para asignar las licencias, se deben de usar el Nombre SKU de la licencia. Para más información al respecto puede acceder a la documentación de los nombres SKU de licencias [Para Empresas](https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference) o [Para Escuelas](https://learn.microsoft.com/en-us/microsoftteams/sku-reference-edu)
 
 > [!Caution]
-> Para asignar licencias en masas, es necesario usar como identificador el ´Id´ del usuario en vez de su ´UPN´. Vea el ejemplo [!INCLUDE [Asignar licencias en masa](MicrosoftGraph_UserAssignLicense.ps1)]
+> Para asignar licencias en masas, es necesario usar como identificador el `Id` del usuario en vez de su `UPN`. Vea el ejemplo [!INCLUDE [Asignar licencias en masa](MicrosoftGraph_UserAssignLicense.ps1)]
