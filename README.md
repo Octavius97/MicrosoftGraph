@@ -1,5 +1,5 @@
 # Microsoft Graph PowerShell
-Documentatcion referente a Microsoft Graph PowerShell.
+Documentacion referente a Microsoft Graph PowerShell.
 
 > [!Note]
 > Este repositorio toma en cuenta ejemplos realizados como practica y/o prueba. Todo lo que realices de manera personal queda **bajo tu propia responsabilidad**.
@@ -34,7 +34,9 @@ Set-ExecutionPolicy Unrestricted
 - Agregar usuarios a un grupo 👉 [ForEach - New-MgGroupMember](MicrosoftGraph_AddUsersToGroupInBulk.ps1)
 - Actualizar usuarios en masa 👉 [ForEach - Update-MgUser](MicrosoftGraph_UpdateUsersInBulk.ps1)
 - Actualizar el dominio de un grupo de usuarios 👉 [ForEach - Update-MgUser](MicrosoftGraph_ChangeDomainToUserGroup.ps1)
+- Agregar métodos de autenticación a un usuario 👉 [New-MgUserAuthentication](MicrosoftGraph_AssignAuthenticationMethod.ps1)
 - Asignar licencias a usuarios en masa 👉 [ForEach - Set-MgUserLicense](MicrosoftGraph_UserAssignLicense.ps1)
 
 > [!Important]
 > Para asignar las licencias, se deben de usar el Nombre SKU de la licencia. Para más información al respecto puede acceder a la documentación de los nombres SKU de licencias [Para Empresas](https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference) o [Para Escuelas](https://learn.microsoft.com/en-us/microsoftteams/sku-reference-edu)
+
