@@ -33,6 +33,7 @@ Set-ExecutionPolicy Unrestricted
 - Agregar usuarios en masa 👉 [ForEach - New-MgUser](MicrosoftGraph_NewUserBulk.ps1)
 - Agregar usuarios a un grupo 👉 [ForEach - New-MgGroupMember](MicrosoftGraph_AddUsersToGroupInBulk.ps1)
 - Actualizar usuarios en masa 👉 [ForEach - Update-MgUser](MicrosoftGraph_UpdateUsersInBulk.ps1)
+- Actualizar contraseña de usuarios en masa [For-Each - Update-MgUser](MicrosoftGraph_UpdatePasswordInBulk.ps1)
 - Actualizar el dominio de un grupo de usuarios 👉 [ForEach - Update-MgUser](MicrosoftGraph_ChangeDomainToUserGroup.ps1)
 - Agregar métodos de autenticación a un usuario 👉 [New-MgUserAuthentication](MicrosoftGraph_AssignAuthenticationMethod.ps1)
 - Asignar licencias a usuarios en masa 👉 [ForEach - Set-MgUserLicense](MicrosoftGraph_UserAssignLicense.ps1)
