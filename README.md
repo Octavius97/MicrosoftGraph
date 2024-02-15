@@ -36,6 +36,7 @@ Set-ExecutionPolicy Unrestricted
 - Actualizar contraseña de usuarios en masa [For-Each - Update-MgUser](MicrosoftGraph_UpdatePasswordInBulk.ps1)
 - Actualizar el dominio de un grupo de usuarios 👉 [ForEach - Update-MgUser](MicrosoftGraph_ChangeDomainToUserGroup.ps1)
 - Agregar métodos de autenticación a un usuario 👉 [New-MgUserAuthentication](MicrosoftGraph_AssignAuthenticationMethod.ps1)
+- Asignar el estado del MFA en Forzado en masa 👉 [For-Each Set-MsolUser](MSolService_SetMFAEnforcedInBulk.ps1)
 - Asignar licencias a usuarios en masa 👉 [ForEach - Set-MgUserLicense](MicrosoftGraph_UserAssignLicense.ps1)
 
 > [!Important]
