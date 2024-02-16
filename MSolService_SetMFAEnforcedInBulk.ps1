@@ -9,5 +9,5 @@ $requeriments = @{RelyingParty = "*"; RememberDevicesNotIssuedBefore = $date; St
 
 #Recorrer usuarios y establecer el authenticator en Enforced
 foreach ($u in $users) {
-    Set-MsolUser -UserPrincipalName "alejandro.romero@beemead.cloudns.biz" -StrongAuthenticationRequirements $requeriments
+    Set-MsolUser -UserPrincipalName $u.UPN -StrongAuthenticationRequirements $requeriments
 }
