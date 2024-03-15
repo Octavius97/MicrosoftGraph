@@ -13,3 +13,4 @@ foreach($u in $usersCSV){
 
     Set-MgUserLicense -UserId $usuario.Id -AddLicenses @{SkuId = $License.SkuId} -RemoveLicenses @()
 }
+
