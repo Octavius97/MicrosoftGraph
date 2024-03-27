@@ -5,14 +5,14 @@ Connect-MsolService -Credential $Cred
 Connect-MgGraph -Scopes DeviceManagementManagedDevices.Read.All, Device.Read.All, de
 
 #Obtener los usuarios
-$users = Import-Csv -Path ".\path\to\csv\file.csv"
+$users = Import-Csv -Path "C:\path\to\csv\file.csv"
 $users = Get-MsolUser -All
 $date = [System.DateTime]::Today
 $requeriments = @{RelyingParty = "*"; RememberDevicesNotIssuedBefore = $date; State = "Enforced"}
 
-#Recorrer usuarios y establecer el authenticator en Enforced
+#Recorrer cada usuario y establecer el authenticator en Habilitado
 foreach ($u in $users) {
-    Set-MsolUser -UserPrincipalName $u.UPN -StrongAuthenticationRequirements $requeriments -StrongAuthenticationMethods @{}
+    Set-MsolUser -UserPrincipalName $u.UPN -StrongAuthenticationRequirements $requeriments -StrongAuthenticationMethods @()
 }
 
 $users = Get-MsolUser -All
