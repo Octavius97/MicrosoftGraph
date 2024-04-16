@@ -18,9 +18,9 @@ while ($opcion -notmatch "^[1-6]$") {
     }
 }
 
+
 switch ($opcion) {
     1 {
-        Import-Module Microsoft.Graph
         Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All", "Directory.Read.All", "User.ReadWrite.All", "Group.ReadWrite.All", "Directory.ReadWrite.All"
     }
     2 {
@@ -35,7 +35,7 @@ switch ($opcion) {
         $username = Read-Host "Ingrese el nombre del usuario: "
         $password = Read-Host "Ingrese la contraseña: " -AsSecureString
         $credential = New-Object System.Management.Automation.PSCredential ($username, $password)
-        Connect-MsolService -Credential $credential
+        Connect-MsolService -Credential $credential 
     }
     4 {
         import-module ExchangeOnlineManagement
@@ -55,5 +55,26 @@ switch ($opcion) {
     6 {
         Write-Host "Bye"
         exit
+    }
+}
+
+# Cerrar la conexión del módulo si la ventana se cierra
+$null = Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PSEngineEvent]::Exiting) -Action {
+    switch ($opcion) {
+        1 {
+            Disconnect-MgGraph
+        }
+        2 {
+            Disconnect-AzureAD
+        }
+        3 {
+            Disconnect-MsolService
+        }
+        4 {
+            Disconnect-ExchangeOnline
+        }
+        5 {
+            Disconnect-SPOService
+        }
     }
 }
