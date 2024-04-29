@@ -13,3 +13,5 @@ Get-MgBetaUser -All -Property 'UserPrincipalName','SignInActivity','Mail','Displ
 
 
 Get-MgUser -UserId 'urbosa@oc365support.cloudns.org' -Property 'UserPrincipalName','OnPremisesImmutableId','DisplayName' | Select-Object DisplayName, UserPrincipalName, OnPremisesImmutableId
+
+Get-MgServicePrincipal | ForEach-Object { Get-MgServicePrincipalMemberOf -ServicePrincipalId $_.Id }
