@@ -9,4 +9,4 @@ Install-Module Microsoft.Graph #Instalar el modulo
 Connect-MgGraph -Scopes DeviceManagementManagedDevices.Read.All, Device.Read.All 
 
 # Exportar los dispositivos que están pendientes
-Get-MgDevice -All -Filter "TrustType eq 'ServerAd'" | Where-Object{($_.ProfileType -ne "RegisteredDevice") -and (-not $_.AlternativeSecurityIds)} | select-object -Property AccountEnabled, Id, DeviceId, DisplayName, OperatingSystem, OperatingSystemVersion, TrustType | export-csv pendingdevicelist-summary.csv -NoTypeInformation
+Get-MgDevice -All -Filter "TrustType eq 'ServerAd'" | Where-Object{($_.ProfileType -ne "RegisteredDevice") -and (-not $_.AlternativeSecurityIds)} | select-object -Property AccountEnabled, Id, DeviceId, DisplayName, OperatingSystem, OperatingSystemVersion, TrustType | export-csv 'C:\pendingdevicelist-summary.csv' -NoTypeInformation
