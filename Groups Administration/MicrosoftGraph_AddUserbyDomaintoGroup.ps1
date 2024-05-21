@@ -2,11 +2,11 @@
 Set-ExecutionPolicy Unrestricted
 
 Connect-MgGraph -Scopes User.Read.All, Group.ReadWrite.All, GroupMember.ReadWrite.All
-$estudiantes = Get-MgUSer -All | Where-Object UserPrincipalName -Match "dominio.com"
+$users = Get-MgUser -All | Where-Object UserPrincipalName -Match "dominio.com"
 
-$idGrupo = ###
+$idGrupo = ### Copiar ID del Grupo desde Entra
 
-foreach($e in $estudiantes){
-    New-MgGroupMember -GroupId $idGrupo -DirectoryObjectId $e.Id
+foreach($u in $users){
+    New-MgGroupMember -GroupId $idGrupo -DirectoryObjectId $u.Id
 }
 

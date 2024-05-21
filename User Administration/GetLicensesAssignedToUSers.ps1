@@ -9,4 +9,4 @@ Get-MgUser -All | ForEach-Object {
   }
 } | Select-Object Nombre, Correo, Licencia
 
-$reporte | Where-Object Licencia -Match 'DEVELOPERPACK_E5'
+$reporte 
