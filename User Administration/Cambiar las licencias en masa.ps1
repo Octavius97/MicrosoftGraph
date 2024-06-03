@@ -27,3 +27,11 @@ foreach ($user in $users) {
     # Agregar la licencia Microsoft 365 Standard
     Set-MgUserLicense -UserId $u.Id -AddLicenses @{SkuId = $M365_Standard.SkuId} -RemoveLicenses @()
 }
+
+$user = Import-CSV -Path "C:\users.csv"
+$EMS = Get-MgSubscribedSku -All | Where-Object {$_.SkuPartNumber -eq "EMS"}
+
+foreach($u in $user){
+    $uEMS = Get-MgUser -UserId $u.UPN
+    Set-MgUserLicense -UserId $uEMS.Id -AddLicenses @{SkuId = $EMS.SkuId} -RemoveLicenses @()
+}
