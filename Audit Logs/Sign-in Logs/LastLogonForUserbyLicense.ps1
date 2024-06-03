@@ -8,7 +8,7 @@ Install-Module -Name Microsoft.Graph -Force
 Set-ExecutionPolicy RemoteSigned
 
 #Connect to Graph
-Connect-MgGraph -Scopes User.Read.All, Directory.Read.All
+Connect-MgGraph -Scopes User.Read.All, Directory.Read.All, AuditLog.Read.All
 
 # Search the license
 # Find the SKU in the following link: https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference)
