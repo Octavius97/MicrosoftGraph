@@ -14,14 +14,7 @@ Connect-MgGraph -Scopes User.Read.All, Directory.Read.All
 # Find the SKU in the following link: https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference)
 $license = Get-MgSubscribedSku | Where-Object SkuPartNumber -EQ '## Enter the SKU ##'
 
-$report = @()
 # Get all users with the license
 Get-MgUser -All -Property "UserPrincipalName, DisplayName, SignInActivity" -Filter "assignedLicenses/any(x:x/skuId eq $($license.SkuId) )" | ForEach-Object {
-  $report += [PSCustomObject]@{
-    UserPrincipalName = $_.UserPrincipalName
-    DisplayName = $_.DisplayName
-    LastLogon = $_.SignInActivity.LastSignInDateTime
-  }
-}
-
-$report | Export-Csv -Path "C:\LastLogonForUserbyLicense.csv" -NoTypeInformation
+  Select-Object -InputObject $_ -Property UserPrincipalName, DisplayName, @{Name = "LastLogon"; Expression = { $_.SignInActivity.LastSignInDateTime } }
+} | Export-Csv -Path "C:\LastLogonForUserbyLicense.csv" -NoTypeInformation
