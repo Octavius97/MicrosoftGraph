@@ -9,7 +9,8 @@ To connect with PowerShell's Microsoft Graph you must use the `User.ReadWrite.Al
 ```Powershell
 Connect-MgGraph -Scopes User.ReadWrite.All
 ```
->[!Note] You can add the `-NoWelcome` parameter to not show the Welcome to Microsoft Graph message
+> [!Note]
+> You can add the `-NoWelcome` parameter to not show the Welcome to Microsoft Graph message
 
 ### 1.1. Users Attributes
 To create users, the command needs some properties to fill the user attributes in Microsoft Entra ID. The next are the minimal user attributes requires to create a new user with Microsoft Graph
