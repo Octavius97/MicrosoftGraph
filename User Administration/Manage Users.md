@@ -4,7 +4,7 @@
 
 To create users with PowerShell's Microsoft Graph module yo must use the Command `New-MgUser`. You can check the next article: [Microsoft Graph: New-MgUser](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguser?view=graph-powershell-1.0)
 
-> [!Information]
+> [!Important]
 > To connect with PowerShell's Microsoft Graph you must use the `User.ReadWrite.All` scope for manage users.
 ```Powershell
 Connect-MgGraph -Scopes User.ReadWrite.All
