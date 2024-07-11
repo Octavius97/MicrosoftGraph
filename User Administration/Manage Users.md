@@ -44,9 +44,8 @@ New-MgUser -DisplayName "Roham Hyrule" -GivenName "Roham" -SurName "Hyrule" -Use
 ### 1.2. Create users in bulk from a CSV
 You can load a CSV file with the users information to create them in bulk. You have to create the CSV file with the users properties, for example:
 
-|DisplayName|GivenName|SurName|UserPrincipalName|Password|
-----------------------------------------------------------
-|Roham Hyrule|Roham|Hyrule|roham.hyrule@hyrule.com|pyglp]6}-5O7|
-----------------------------------------------------------
-|Ganondorf Pendragon|Ganondorf|Pendragon|ganondorf@hyrule.com|TS23O;1vAy|
-----------------------------------------------------------
+|DisplayName        |GivenName|SurName  |UserPrincipalName      |Password    |
+|-------------------|---------|---------|-----------------------|------------|
+|Roham Hyrule       |Roham    |Hyrule   |roham.hyrule@hyrule.com|pyglp]6}-5O7|
+|-------------------|---------|---------|-----------------------|------------|
+|Ganondorf Pendragon|Ganondorf|Pendragon|ganondorf@hyrule.com   |TS23O;1vAy  |
