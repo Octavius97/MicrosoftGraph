@@ -2,17 +2,17 @@
 
 ## 1. Create Users
 
-To create users with PowerShell's Microsoft Graph module yo must use the Command `New-MgUser` and use the properly Microsoft Graph API Permissions, in this case the permission to create users is `User.ReadWrite.All`. You can check the next article: [Microsoft Graph:New-MgUser](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguser?view=graph-powershell-1.0)
+To create users with PowerShell's Microsoft Graph module yo must use the Command `New-MgUser`. You can check the next article: [Microsoft Graph: New-MgUser](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguser?view=graph-powershell-1.0)
 
-### 1.1. Connect to Graph
-To connect with PowerShell's Microsoft Graph you must use the `User.ReadWrite.All` scope for manage users.
+> [!Information]
+> To connect with PowerShell's Microsoft Graph you must use the `User.ReadWrite.All` scope for manage users.
 ```Powershell
 Connect-MgGraph -Scopes User.ReadWrite.All
 ```
 > [!Note]
 > You can add the `-NoWelcome` parameter to not show the Welcome to Microsoft Graph message
 
-### 1.2. Users Attributes
+### 1.1. Users Attributes
 To create users, the command needs some properties to fill the user attributes in Microsoft Entra ID. The next are the minimal user attributes requires to create a new user with Microsoft Graph
 - **-DisplayName**: The displayname for the user
 - **-GivenName**: The first name for the user
@@ -25,10 +25,18 @@ To create users, the command needs some properties to fill the user attributes i
 ```PowerShell
 # Create the Password Profile Hashtable
 $password = @{
-  Password = "$rw@4d08&*>35"
+  Password = "$rw4d08&*>35"
   ForceChangePasswordNextSignIn = $true
 }
 
 # Create the user
 New-MgUser -DisplayName "Roham Nohansen Hyrule" -GivenName "Roham" -SurName "Hyrule" -UserPrincipalName "roham.hyrule@hyrule.com" -MailNickName "roham.hyrule" -PasswordProfile $password -AccountEnabled
 ```
+
+> [!Information]
+> You can also define the usage location for the user using the `-UsageLocation` parameter. The value for the usage location is required to set the license for the user and this value uses the country ISO code, for example:
+> - *United States*: _US_
+> - *Mexico*: _MX_
+> - *Colombia*: _CO_
+> You can check the next page for see the [Countries ISO Codes](https://www.countrycode.org/)
+
