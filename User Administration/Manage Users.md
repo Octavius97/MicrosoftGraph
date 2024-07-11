@@ -33,7 +33,7 @@ $password = @{
 New-MgUser -DisplayName "Roham Nohansen Hyrule" -GivenName "Roham" -SurName "Hyrule" -UserPrincipalName "roham.hyrule@hyrule.com" -MailNickName "roham.hyrule" -PasswordProfile $password -AccountEnabled
 ```
 
-> [!Information]
+> [!Note]
 > You can also define the usage location for the user using the `-UsageLocation` parameter. The value for the usage location is required to set the license for the user and this value uses the country ISO code, for example:
 > - *United States*: _US_
 > - *Mexico*: _MX_
