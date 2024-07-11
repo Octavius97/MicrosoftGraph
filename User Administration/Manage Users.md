@@ -47,5 +47,28 @@ You can load a CSV file with the users information to create them in bulk. You h
 |DisplayName        |GivenName|SurName  |UserPrincipalName      |Password    |
 |-------------------|---------|---------|-----------------------|------------|
 |Roham Hyrule       |Roham    |Hyrule   |roham.hyrule@hyrule.com|pyglp]6}-5O7|
-|-------------------|---------|---------|-----------------------|------------|
 |Ganondorf Pendragon|Ganondorf|Pendragon|ganondorf@hyrule.com   |TS23O;1vAy  |
+|Zelda Hyrule       |Zelda    |Hyrule   |zelda@hyrule.com       |nN6d[J$Z7H  |
+
+> [!Note]
+> In this example, the `USerPrincipalName` value will be use to populate the `MailNickName`
+
+Now, you can load the CSV file using the `Import-CSV` command in the PowerShell
+```PowerShell
+# Import all users from the CSV and save it in a variable
+$users = Import-CSV -Path "C:\users.csv"
+
+# Foreach user in the CSV create the User
+foreach($user in $users){
+  $DisplayName = $user.DisplayName
+  $GivenName = $user.GivenName
+  $SurName = $user.SurName
+  $UserPrincipalName = $user.UserPrincipalName
+  $MailNickName = $UserPrincipalName.Split('@')[0]
+  $Password = @{Password = $user.Password; ForceChangePasswordNextSignIn = $true}
+
+  New-MgUser -DisplayName $DisplayName -GivenName $GivenName -SurName $SurName `
+  -UserPrincipalName $UserPrincipalName -MailNickName $MailNickName -PasswordProfile $Password -AccountEnabled
+}
+```
+This will create all users from the CSV file
