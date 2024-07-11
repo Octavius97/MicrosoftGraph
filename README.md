@@ -29,7 +29,7 @@ Set-ExecutionPolicy Unrestricted
 
 ## 2. Ejemplos realizados
 
-- [Administrar Usuarios](/User%20Administration/Manage%20Users.md)
+- [Crear Usuarios](/User%20Administration/Manage%20Users.md)
 
 > [!Important]
 > Para asignar las licencias, se deben de usar el Nombre SKU de la licencia. Para más información al respecto puede acceder a la documentación de los nombres SKU de licencias [Para Empresas](https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference) o [Para Escuelas](https://learn.microsoft.com/en-us/microsoftteams/sku-reference-edu)

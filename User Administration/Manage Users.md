@@ -1,4 +1,4 @@
-# Manage Microsoft 365 users with PowerShell and Microsoft Graph
+# Create Microsoft 365 users with PowerShell and Microsoft Graph
 
 ## 1. Create Users
 
