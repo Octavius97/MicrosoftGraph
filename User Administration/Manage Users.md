@@ -30,7 +30,7 @@ $password = @{
 }
 
 # Create the user
-New-MgUser -DisplayName "Roham Nohansen Hyrule" -GivenName "Roham" -SurName "Hyrule" -UserPrincipalName "roham.hyrule@hyrule.com" -MailNickName "roham.hyrule" -PasswordProfile $password -AccountEnabled
+New-MgUser -DisplayName "Roham Hyrule" -GivenName "Roham" -SurName "Hyrule" -UserPrincipalName "roham.hyrule@hyrule.com" -MailNickName "roham.hyrule" -PasswordProfile $password -AccountEnabled
 ```
 
 > [!Note]
@@ -38,5 +38,15 @@ New-MgUser -DisplayName "Roham Nohansen Hyrule" -GivenName "Roham" -SurName "Hyr
 > - *United States*: _US_
 > - *Mexico*: _MX_
 > - *Colombia*: _CO_
+>
 > You can check the next page for see the [Countries ISO Codes](https://www.countrycode.org/)
 
+### 1.2. Create users in bulk from a CSV
+You can load a CSV file with the users information to create them in bulk. You have to create the CSV file with the users properties, for example:
+
+|DisplayName|GivenName|SurName|UserPrincipalName|Password|
+----------------------------------------------------------
+|Roham Hyrule|Roham|Hyrule|roham.hyrule@hyrule.com|pyglp]6}-5O7|
+----------------------------------------------------------
+|Ganondorf Pendragon|Ganondorf|Pendragon|ganondorf@hyrule.com|TS23O;1vAy|
+----------------------------------------------------------
