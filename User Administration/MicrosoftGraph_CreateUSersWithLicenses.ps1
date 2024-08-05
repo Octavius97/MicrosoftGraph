@@ -13,5 +13,6 @@ foreach($u in $users){
     New-MgUser -UserPrincipalName $u.UPN -MailNickName $u.UPN.Split('@')[0] -GivenName $u.FirstName -SurName $u.LastName -JobTitle $u.Job -Departmen $u.Department -PasswordProfile @{
         ForceChangePasswordNextSignIn = $true
         Password = $u.Password
-    } -AccountEnabled -AssignedLicenses @{SkuId = $license.SkuId}
+    } -UsageLocation "MX" -AccountEnabled
+    Set-MgUserLicense -UserId $u.UPN -AddLicenses @{SkuId = $license.SkuId} -RemoveLicenses @()
 }
