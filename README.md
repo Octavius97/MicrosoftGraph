@@ -1,38 +1,51 @@
-# Microsoft Graph PowerShell
+# Microsoft Graph PowerShell SKD for Microsoft 365 Management
 Documentacion referente a Microsoft Graph PowerShell.
 
 > [!Note]
-> Este repositorio toma en cuenta ejemplos realizados como practica y/o prueba. Todo lo que realices de manera personal queda **bajo tu propia responsabilidad**.
+> All examples performed on this repository were completed for testing purposes. If you use each one of those examples are **under your own responsability**.
 
-## 1. Instalacion del Modulo
+## 1. Module Installation
 
-Buscamos el modulo en la Galeria de Modulos de PowerShell
+You can find the module on PowerShell Gallery using the following command.
 ```PowerShell
 Find-Module -Name Microsoft.Graph | Select-Object -Property Name,Version,PublishedDate | Format-List
 ```
-Este comando te muestra la informacion del modulo disponible en la galeria de PowerShell. Para proceder a instalar el modulo escribimos el siguiente comando
-```PowerShell
-Install-Module Microsoft.Graph -Force
-```
 
 > [!Note]
-> Para ejecutar procesos con Microsoft Graph PowerShell SDK hay que establecer la política de ejecución del PowerShell sin restricciones
+> Set the recommended execution policy for PowerShell Microsoft Graph 
 ```PowerShell
-Set-ExecutionPolicy Unrestricted
+Set-ExecutionPolicy RemoteSigned
 ```
 
 > [!Important]
-> Para conectar al modulo, hay que establecer permisos nevesarios según las acciones a realizar. Para ello se usan `Scopes` que definen los permisos, para más información, puede acceder a la [documentación](https://learn.microsoft.com/en-us/graph/permissions-reference) que contiene todos los permisos y su descripción.
+> The latest module version is facing some executable issues. We recommend using the version `2.25.0` instead the latest.
+>
+> To install the `2.25.0` version you can use the following command
+> ```Powershell
+> Install-Module -Name Microsoft.Graph -RequiredVersion 2.25.0 -Repository PSGallery -Force -AllowClobber
+> ```
 
-> [!Caution]
-> Asegúrese usar los scopes necesarios, en caso de requerir un scope diferente puede volver a conectarse.
+To install the latest version for Microsoft Graph PowerShell, use the following command.
+```PowerShell
+Install-Module Microsoft.Graph -Repository PSGallery -Force -AllowClobber
+```
 
-## 2. Ejemplos realizados
+## 2. Connect to the Module
+> [!Important]
+> To connect to Microsoft Graph through PowerShell module installed you need to connect with neccesary `Scopes` for specific permissions. For more information you can validate the next [documentation](https://learn.microsoft.com/en-us/graph/permissions-reference) that explain the scopes.
 
-- [Crear Usuarios](/User%20Administration/Manage%20Users.md)
+To connect to Microsoft Graph PowerShell, you can use the following command
+```PowerShell
+Connect-MgGraph
+```
+
+If you need to connect with neccesary permissions you need to add the parameter `-Scopes` to the Connect cmdlet.
+```PowerShell
+Connect-MgGraph -Scopes User.Read.All
+```
+> [!Note]
+> The `User.Read.All` scope has the neccesary permision to read all users information.
+> Make sure to use the necessary scopes for the actions you will perform. If a different scope is required, you can reconnect adding the permission to the `-Scopes` parameter.
 
 > [!Important]
-> Para asignar las licencias, se deben de usar el Nombre SKU de la licencia. Para más información al respecto puede acceder a la documentación de los nombres SKU de licencias [Para Empresas](https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference) o [Para Escuelas](https://learn.microsoft.com/en-us/microsoftteams/sku-reference-edu)
-
-> [!Caution]
-> Para asignar licencias en masas, es necesario usar como identificador el `Id` del usuario en vez de su `UPN`. Vea el ejemplo [Asignar licencias en masa](MicrosoftGraph_UserAssignLicense.ps1)
+> If you need to use more than one scope, you can add them by separating each with a comma (,).
