@@ -33,7 +33,11 @@ Get-MgUser -All
 ### 3. Create a New User
 Create a new user account:
 ```powershell
-New-MgUser -DisplayName "John Doe" -UserPrincipalName "johndoe@contoso.com" -MailNickname "johndoe" -PasswordProfile @{Password="P@ssw0rd"; ForceChangePasswordNextSignIn=$true} -AccountEnabled:$true
+$passwordProfile = @{
+  Password="P@ssw0rd"
+  ForceChangePasswordNextSignIn=$true
+}
+New-MgUser -DisplayName "John Doe" -UserPrincipalName "johndoe@contoso.com" -MailNickname "johndoe" -PasswordProfile $passwordProfile -AccountEnabled:$true
 ```
 > [!Note]
 > This is the basic user information required to create a new user. You can specify additional parameters to define other attributes for the user. Below is a list of commonly used attributes when creating a user with the `New-MgUser` cmdlet:
