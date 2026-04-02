@@ -17,14 +17,6 @@ Find-Module -Name Microsoft.Graph | Select-Object -Property Name,Version,Publish
 Set-ExecutionPolicy RemoteSigned
 ```
 
-> [!Important]
-> The latest module version is facing some executable issues. We recommend using the version `2.25.0` instead the latest.
->
-> To install the `2.25.0` version you can use the following command
-> ```Powershell
-> Install-Module -Name Microsoft.Graph -RequiredVersion 2.25.0 -Repository PSGallery -Force -AllowClobber
-> ```
-
 To install the latest version for Microsoft Graph PowerShell, use the following command.
 ```PowerShell
 Install-Module Microsoft.Graph -Repository PSGallery -Force -AllowClobber
